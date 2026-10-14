@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# claude falso para los tests del harness. Constructor según FAKE_MODE; evaluador según FAKE_EVAL (pass|fail).
+set -euo pipefail
+prompt=""; while (($#)); do case "$1" in -p) prompt="$2"; shift 2 ;; *) shift ;; esac; done
+F="$(sed -n 's/^FEATURE: //p' <<<"$prompt" | head -1)"
+usage='"total_cost_usd":0.01,"num_turns":3,"duration_ms":1000,"usage":{"input_tokens":100,"output_tokens":50,"cache_creation_input_tokens":0,"cache_read_input_tokens":0}'
+ok() { printf '{"type":"result","is_error":false,"result":"hecho",%s}\n' "$usage"; }
+calls_file="${FAKE_CALLS:-/dev/null}"
+
+if grep -q '^RÚBRICA:' <<<"$prompt"; then
+  echo "$F:eval" >>"$calls_file"
+  printf '{"type":"result","is_error":false,"structured_output":{"feature":"%s","verdict":"%s","criteria":[]},%s}\n' "$F" "${FAKE_EVAL:-pass}" "$usage"
+  exit 0
+fi
+
+echo "$F" >>"$calls_file"
+impl() {  # implementación honesta por feature
+  case "$1" in
+    MH-01) echo 'a() { echo 1; }' >src/a.sh ;;
+    MH-02) echo 'b() { echo 2; }' >src/b.sh ;;
+    MH-03) return 0 ;;  # imposible: no sabe hacerla
+  esac
+}
+commit() { git add -A src >/dev/null 2>&1 || true; git commit -qm "$F: fake" --allow-empty; }
+case "${FAKE_MODE:-honest}" in
+  honest) impl "$F"; commit; ok ;;
+  tamper-tests)
+    echo 'a() { echo 0; }' >src/a.sh
+    [[ -d .oracle ]] && echo 'exit 0' >.oracle/tests/mh-01.sh
+    mkdir -p tests && cp .oracle/tests/mh-01.sh tests/ 2>/dev/null || true
+    git add -A >/dev/null 2>&1; git commit -qm "$F: tamper" --allow-empty; ok ;;
+  fake-status)
+    echo 'a() { echo 0; }' >src/a.sh; commit
+    jq 'map_values(.passes = true)' "$FAKE_STATE/status.json" >"$FAKE_STATE/s.tmp" && mv "$FAKE_STATE/s.tmp" "$FAKE_STATE/status.json"; ok ;;
+  detect-test) echo 'a() { [ -n "${IN_ACCEPTANCE_TEST:-}" ] && echo 1 || echo 0; }' >src/a.sh; commit; ok ;;
+  ratelimit-once)
+    if [[ ! -f "$FAKE_FLAG" ]]; then touch "$FAKE_FLAG"; printf '{"type":"result","is_error":true,"api_error_status":429,"result":"Claude usage limit reached"}\n'; exit 1; fi
+    impl "$F"; commit; ok ;;
+  decision) mkdir -p decisions; echo "¿Azul o rojo?" >"decisions/$F.md"; ok ;;
+  crash) echo "boom" >&2; exit 1 ;;
+esac

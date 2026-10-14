@@ -1,0 +1,17 @@
+[
+  {
+    "id": "MH-01",
+    "description": "Una línea: qué demuestra este test",
+    "priority": 1,
+    "depends_on": [],
+    "provides": ["@/core/suma"],
+    "verify": { "kind": "test", "file": "tests/unit/mh-01.test.ts" }
+  },
+  {
+    "id": "MH-02",
+    "description": "La página carga y muestra el título",
+    "priority": 2,
+    "depends_on": ["MH-01"],
+    "verify": { "kind": "e2e", "file": "tests/e2e/mh-02.spec.ts" }
+  }
+]

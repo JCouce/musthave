@@ -1,0 +1,1 @@
+{"feature":"MH-31","criteria":[{"criterion":"Al pausar aparece el párrafo donde está la palabra actual","threshold":1},{"criterion":"La palabra actual está resaltada dentro de ese párrafo y es la que se estaba mostrando","threshold":1},{"criterion":"Al reanudar, el contexto deja de estorbar la lectura","threshold":1}]}

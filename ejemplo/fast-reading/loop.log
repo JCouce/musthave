@@ -1,0 +1,133 @@
+[16:08:30] inicio: fast-reading · 31 features · MAX_ITER=103
+[16:08:30] vuelta 1/103 · MH-10 · verdes 1/31
+[16:09:45]   → MH-10: VERDE · verdes 2/31
+[16:09:45] vuelta 2/103 · MH-11 · verdes 2/31
+[16:10:22]   → MH-11: VERDE · verdes 3/31
+[16:10:22] vuelta 3/103 · MH-12 · verdes 3/31
+[16:11:09]   → MH-12: VERDE · verdes 4/31
+[16:11:09] vuelta 4/103 · MH-18 · verdes 4/31
+[16:11:42]   → MH-18: VERDE · verdes 5/31
+[16:11:42] vuelta 5/103 · MH-21 · verdes 5/31
+[16:12:25]   → MH-21: VERDE · verdes 6/31
+[16:12:25] vuelta 6/103 · MH-22 · verdes 6/31
+[16:13:07]   → MH-22: VERDE · verdes 7/31
+[16:13:07] vuelta 7/103 · MH-13 · verdes 7/31
+[16:13:38]   → MH-13: VERDE · verdes 8/31
+[16:13:38] vuelta 8/103 · MH-17 · verdes 8/31
+[16:14:46]   → MH-17: VERDE · verdes 9/31
+[16:14:46] vuelta 9/103 · MH-01 · verdes 9/31
+[16:15:50]   → MH-01: VERDE · verdes 10/31
+[16:15:50] vuelta 10/103 · MH-04 · verdes 10/31
+[16:16:31]   → MH-04: rojo (intento 1) · verdes 10/31
+[16:16:31] vuelta 11/103 · MH-04 · verdes 10/31
+[16:17:17]   → MH-04: rojo (intento 2) · verdes 10/31
+[16:17:17] hay decisiones pendientes en ~/Documents/jcouce/fast-reading/decisions
+[16:21:34] inicio: fast-reading · 31 features · MAX_ITER=103
+[16:21:34] vuelta 1/103 · MH-03 · verdes 10/31
+[16:24:39]   → MH-03: VERDE · verdes 11/31
+[16:24:39] vuelta 2/103 · MH-04 · verdes 11/31
+[16:25:11]   → MH-04: VERDE · verdes 12/31
+[16:25:11] vuelta 3/103 · MH-08 · verdes 12/31
+[16:25:43]   → MH-08: VERDE · verdes 13/31
+[16:25:43] vuelta 4/103 · MH-02 · verdes 13/31
+[16:26:15]   → MH-02: VERDE · verdes 14/31
+[16:26:15] vuelta 5/103 · MH-05 · verdes 14/31
+[16:29:55]   → MH-05: VERDE · verdes 15/31
+[16:29:55] vuelta 6/103 · MH-06 · verdes 15/31
+[16:33:00]   → MH-06: VERDE · verdes 16/31
+[16:33:00] vuelta 7/103 · MH-23 · verdes 16/31
+[16:34:06]   → MH-23: VERDE · verdes 17/31
+[16:34:06] vuelta 8/103 · MH-24 · verdes 17/31
+[16:34:57]   → MH-24: VERDE · verdes 18/31
+[16:34:57] vuelta 9/103 · MH-25 · verdes 18/31
+[16:35:24]   → MH-25: VERDE · verdes 19/31
+[16:35:24] vuelta 10/103 · MH-26 · verdes 19/31
+[16:36:00]   → MH-26: VERDE · verdes 20/31
+[16:36:00] vuelta 11/103 · MH-27 · verdes 20/31
+[16:36:36]   → MH-27: VERDE · verdes 21/31
+[16:36:36] vuelta 12/103 · MH-29 · verdes 21/31
+[16:37:07]   → MH-29: VERDE · verdes 22/31
+[16:37:07] vuelta 13/103 · MH-30 · verdes 22/31
+[16:37:58]   → MH-30: VERDE · verdes 23/31
+[16:37:58] vuelta 14/103 · MH-32 · verdes 23/31
+[16:38:29]   → MH-32: VERDE · verdes 24/31
+[16:38:29] vuelta 15/103 · MH-28 · verdes 24/31
+[16:53:27]   → MH-28: VERDE · verdes 25/31
+[16:53:27] vuelta 16/103 · MH-19 · verdes 25/31
+[16:55:08]   → MH-19: VERDE · verdes 26/31
+[16:55:08] vuelta 17/103 · MH-20 · verdes 26/31
+[16:57:31]   → MH-20: VERDE · verdes 27/31
+[16:57:31] vuelta 18/103 · MH-31 · verdes 27/31
+[16:59:10]   → MH-31: VERDE · verdes 28/31
+[16:59:10] vuelta 19/103 · MH-33 · verdes 28/31
+[17:00:27]   → MH-33: VERDE · verdes 29/31
+[17:00:27] vuelta 20/103 · MH-15 · verdes 29/31
+[17:02:29]   → MH-15: rojo (intento 1) · verdes 29/31
+[17:02:29] vuelta 21/103 · MH-15 · verdes 29/31
+[17:19:26]   → MH-15: VERDE · verdes 30/31
+[17:19:26] vuelta 22/103 · MH-14 · verdes 30/31
+[17:20:46]   → MH-14: VERDE · verdes 31/31
+[17:20:46] todo en verde: puerta final
+[17:24:40] TERMINADO
+== Estado
+MH-07  VERDE  intentos=1 regresiones=0
+MH-10  VERDE  intentos=1 regresiones=0
+MH-11  VERDE  intentos=1 regresiones=0
+MH-12  VERDE  intentos=1 regresiones=0
+MH-18  VERDE  intentos=1 regresiones=0
+MH-21  VERDE  intentos=1 regresiones=0
+MH-22  VERDE  intentos=1 regresiones=0
+MH-13  VERDE  intentos=1 regresiones=0
+MH-17  VERDE  intentos=1 regresiones=0
+MH-01  VERDE  intentos=1 regresiones=0
+MH-04  VERDE  intentos=1 regresiones=0
+MH-03  VERDE  intentos=1 regresiones=0
+MH-08  VERDE  intentos=1 regresiones=0
+MH-02  VERDE  intentos=1 regresiones=0
+MH-05  VERDE  intentos=1 regresiones=0
+MH-06  VERDE  intentos=1 regresiones=0
+MH-23  VERDE  intentos=1 regresiones=0
+MH-24  VERDE  intentos=1 regresiones=0
+MH-25  VERDE  intentos=1 regresiones=0
+MH-26  VERDE  intentos=1 regresiones=0
+MH-27  VERDE  intentos=1 regresiones=0
+MH-29  VERDE  intentos=1 regresiones=0
+MH-30  VERDE  intentos=1 regresiones=0
+MH-32  VERDE  intentos=1 regresiones=0
+MH-28  VERDE  intentos=1 regresiones=0
+MH-19  VERDE  intentos=1 regresiones=0
+MH-20  VERDE  intentos=1 regresiones=0
+MH-31  VERDE  intentos=1 regresiones=0
+MH-33  VERDE  intentos=1 regresiones=0
+MH-15  VERDE  intentos=2 regresiones=0
+MH-14  VERDE  intentos=1 regresiones=0
+== Consumo por rol
+[
+  {
+    "rol": "build",
+    "llamadas": 34,
+    "tokens_entrada": 24275388,
+    "tokens_salida": 144939,
+    "turnos": 430,
+    "minutos": 29,
+    "coste_api_estimado_usd": 16.53
+  },
+  {
+    "rol": "eval",
+    "llamadas": 15,
+    "tokens_entrada": 1135507,
+    "tokens_salida": 21504,
+    "turnos": 175,
+    "minutos": 7,
+    "coste_api_estimado_usd": 0.68
+  },
+  {
+    "rol": "TOTAL",
+    "llamadas": 49,
+    "tokens_entrada": 25410895,
+    "tokens_salida": 166443,
+    "turnos": 605,
+    "minutos": 36,
+    "coste_api_estimado_usd": 17.21
+  }
+]

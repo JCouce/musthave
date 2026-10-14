@@ -1,0 +1,1 @@
+{"feature":"MH-19","criteria":[{"criterion":"Mientras reproduce, la letra pivote resaltada se mantiene en la misma posición horizontal de pantalla palabra tras palabra (no baila)","threshold":1},{"criterion":"La letra pivote se distingue visualmente del resto de la palabra","threshold":1}]}

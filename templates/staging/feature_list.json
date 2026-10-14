@@ -1,0 +1,10 @@
+[
+  {
+    "id": "MH-01",
+    "description": "Una línea: qué demuestra este test",
+    "priority": 1,
+    "depends_on": [],
+    "provides": ["<módulo de la app, tal como lo importa el test>"],
+    "verify": { "kind": "test", "file": "tests/<fichero con mh-01 en el nombre>" }
+  }
+]

@@ -1,0 +1,1 @@
+{"feature":"MH-15","criteria":[{"criterion":"Tras cargar un PDF y recargar la página, el libro se abre solo sin volver a elegir el archivo","threshold":1},{"criterion":"La lectura se retoma cerca de donde se dejó, no desde el principio si ya se había avanzado","threshold":1}]}

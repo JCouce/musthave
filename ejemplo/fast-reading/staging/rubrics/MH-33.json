@@ -1,0 +1,1 @@
+{"feature":"MH-33","criteria":[{"criterion":"Todos los controles tienen una etiqueta comprensible (botones e inputs)","threshold":1},{"criterion":"Todo se puede usar solo con teclado (Tab para llegar, Espacio/Enter para activar)","threshold":1},{"criterion":"Hay un botón visible de play/pausa que funciona con un clic o toque","threshold":1}]}

@@ -1,0 +1,62 @@
+== Estado
+MH-07  VERDE  intentos=1 regresiones=0
+MH-10  VERDE  intentos=1 regresiones=0
+MH-11  VERDE  intentos=1 regresiones=0
+MH-12  VERDE  intentos=1 regresiones=0
+MH-18  VERDE  intentos=1 regresiones=0
+MH-21  VERDE  intentos=1 regresiones=0
+MH-22  VERDE  intentos=1 regresiones=0
+MH-13  VERDE  intentos=1 regresiones=0
+MH-17  VERDE  intentos=1 regresiones=0
+MH-01  VERDE  intentos=1 regresiones=0
+MH-04  VERDE  intentos=1 regresiones=0
+MH-03  VERDE  intentos=1 regresiones=0
+MH-08  VERDE  intentos=1 regresiones=0
+MH-02  VERDE  intentos=1 regresiones=0
+MH-05  VERDE  intentos=1 regresiones=0
+MH-06  VERDE  intentos=1 regresiones=0
+MH-23  VERDE  intentos=1 regresiones=0
+MH-24  VERDE  intentos=1 regresiones=0
+MH-25  VERDE  intentos=1 regresiones=0
+MH-26  VERDE  intentos=1 regresiones=0
+MH-27  VERDE  intentos=1 regresiones=0
+MH-29  VERDE  intentos=1 regresiones=0
+MH-30  VERDE  intentos=1 regresiones=0
+MH-32  VERDE  intentos=1 regresiones=0
+MH-28  VERDE  intentos=1 regresiones=0
+MH-19  VERDE  intentos=1 regresiones=0
+MH-20  VERDE  intentos=1 regresiones=0
+MH-31  VERDE  intentos=1 regresiones=0
+MH-33  VERDE  intentos=1 regresiones=0
+MH-15  VERDE  intentos=2 regresiones=0
+MH-14  VERDE  intentos=1 regresiones=0
+== Consumo por rol
+[
+  {
+    "rol": "build",
+    "llamadas": 34,
+    "tokens_entrada": 24275388,
+    "tokens_salida": 144939,
+    "turnos": 430,
+    "minutos": 29,
+    "coste_api_estimado_usd": 16.53
+  },
+  {
+    "rol": "eval",
+    "llamadas": 15,
+    "tokens_entrada": 1135507,
+    "tokens_salida": 21504,
+    "turnos": 175,
+    "minutos": 7,
+    "coste_api_estimado_usd": 0.68
+  },
+  {
+    "rol": "TOTAL",
+    "llamadas": 49,
+    "tokens_entrada": 25410895,
+    "tokens_salida": 166443,
+    "turnos": 605,
+    "minutos": 36,
+    "coste_api_estimado_usd": 17.21
+  }
+]

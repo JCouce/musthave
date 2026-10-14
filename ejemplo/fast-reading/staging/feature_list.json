@@ -1,0 +1,416 @@
+[
+  {
+    "id": "MH-07",
+    "must_have_ref": "MH-07",
+    "description": "Normalización: NFC, ligaduras y soft hyphens con mapa propio; sin NFKC (n.º intacto)",
+    "priority": 1,
+    "depends_on": [],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-07.test.ts"
+    }
+  },
+  {
+    "id": "MH-10",
+    "must_have_ref": "MH-10",
+    "description": "Fin de frase en español con tabla de casos (abreviaturas, iniciales, números, URLs)",
+    "priority": 2,
+    "depends_on": [],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-10.test.ts"
+    },
+    "provides": [
+      "@/core/tokenize"
+    ]
+  },
+  {
+    "id": "MH-11",
+    "must_have_ref": "MH-11",
+    "description": "Puntuación de apertura ¿ ¡ « ( – pegada a la palabra siguiente",
+    "priority": 3,
+    "depends_on": [
+      "MH-10"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-11.test.ts"
+    }
+  },
+  {
+    "id": "MH-12",
+    "must_have_ref": "MH-12",
+    "description": "Palabras de 14+ caracteres: troceo por guion o en ⌈len/8⌉ trozos",
+    "priority": 4,
+    "depends_on": [
+      "MH-10"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-12.test.ts"
+    }
+  },
+  {
+    "id": "MH-18",
+    "must_have_ref": "MH-18",
+    "description": "Pivote ORP según longitud alfanumérica",
+    "priority": 5,
+    "depends_on": [],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-18.test.ts"
+    }
+  },
+  {
+    "id": "MH-21",
+    "must_have_ref": "MH-21",
+    "description": "Duración por palabra: máximo de multiplicadores, tope ×4",
+    "priority": 6,
+    "depends_on": [],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-21.test.ts"
+    },
+    "provides": [
+      "@/core/timing"
+    ]
+  },
+  {
+    "id": "MH-22",
+    "must_have_ref": "MH-22",
+    "description": "Pantalla en blanco tras fin de frase y alrededor de títulos",
+    "priority": 7,
+    "depends_on": [
+      "MH-21"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-22.test.ts"
+    }
+  },
+  {
+    "id": "MH-13",
+    "must_have_ref": "MH-13",
+    "description": "Clave de caché = SHA-256 del contenido + versión del parser",
+    "priority": 8,
+    "depends_on": [],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-13.test.ts"
+    }
+  },
+  {
+    "id": "MH-17",
+    "must_have_ref": "MH-17",
+    "description": "IndexedDB caído o QuotaExceeded: sigue en memoria y avisa",
+    "priority": 9,
+    "depends_on": [],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-17.test.ts"
+    }
+  },
+  {
+    "id": "MH-01",
+    "must_have_ref": "MH-01",
+    "description": "Solo PDFs, validados por cabecera %PDF-",
+    "priority": 10,
+    "depends_on": [],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-01.test.ts"
+    },
+    "provides": [
+      "@/ingest/ingest"
+    ]
+  },
+  {
+    "id": "MH-04",
+    "must_have_ref": "MH-04",
+    "description": "Guiones de corte: se mantiene si el trozo derecho lleva guion; si no, se une",
+    "priority": 11,
+    "depends_on": [
+      "MH-07",
+      "MH-03"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-04.test.ts"
+    }
+  },
+  {
+    "id": "MH-03",
+    "must_have_ref": "MH-03",
+    "description": "Extracción completa del libro: 58.594 palabras ±1 %, sin vacíos",
+    "priority": 12,
+    "depends_on": [
+      "MH-07"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-03.test.ts"
+    },
+    "provides": [
+      "@/ingest/extract"
+    ]
+  },
+  {
+    "id": "MH-08",
+    "must_have_ref": "MH-08",
+    "description": "Páginas sin texto (1 y 135) ni rompen ni meten basura",
+    "priority": 13,
+    "depends_on": [
+      "MH-03",
+      "MH-01"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-08.test.ts"
+    }
+  },
+  {
+    "id": "MH-02",
+    "must_have_ref": "MH-02",
+    "description": "Errores claros: sin texto, cifrado, corrupto, worker caído, timeout",
+    "priority": 14,
+    "depends_on": [
+      "MH-01",
+      "MH-03"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-02.test.ts"
+    }
+  },
+  {
+    "id": "MH-05",
+    "must_have_ref": "MH-05",
+    "description": "Párrafos por hueco vertical o sangría; frases que cruzan página no abren párrafo",
+    "priority": 15,
+    "depends_on": [
+      "MH-03"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-05.test.ts"
+    }
+  },
+  {
+    "id": "MH-06",
+    "must_have_ref": "MH-06",
+    "description": "Títulos por cambio de fuente, renglón corto y sin puntuación final",
+    "priority": 16,
+    "depends_on": [
+      "MH-03"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-06.test.ts"
+    }
+  },
+  {
+    "id": "MH-23",
+    "must_have_ref": "MH-23",
+    "description": "Sin drift: instantes acumulados desde el arranque",
+    "priority": 17,
+    "depends_on": [
+      "MH-21",
+      "MH-22"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-23.test.ts"
+    },
+    "provides": [
+      "@/core/player"
+    ]
+  },
+  {
+    "id": "MH-24",
+    "must_have_ref": "MH-24",
+    "description": "Rampa de arranque: 60 % → 100 % en 20 palabras, primera ≥ 200 ms",
+    "priority": 18,
+    "depends_on": [
+      "MH-23"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-24.test.ts"
+    }
+  },
+  {
+    "id": "MH-25",
+    "must_have_ref": "MH-25",
+    "description": "Cambio de WPM en marcha sin saltar ni repetir",
+    "priority": 19,
+    "depends_on": [
+      "MH-23"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-25.test.ts"
+    }
+  },
+  {
+    "id": "MH-26",
+    "must_have_ref": "MH-26",
+    "description": "Pausa automática al ocultar la pestaña",
+    "priority": 20,
+    "depends_on": [
+      "MH-23"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-26.test.ts"
+    }
+  },
+  {
+    "id": "MH-27",
+    "must_have_ref": "MH-27",
+    "description": "Fin del libro: se para sin volver al principio",
+    "priority": 21,
+    "depends_on": [
+      "MH-23"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-27.test.ts"
+    }
+  },
+  {
+    "id": "MH-29",
+    "must_have_ref": "MH-29",
+    "description": "Retroceder/avanzar por frases",
+    "priority": 22,
+    "depends_on": [
+      "MH-23"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-29.test.ts"
+    }
+  },
+  {
+    "id": "MH-30",
+    "must_have_ref": "MH-30",
+    "description": "Reanudar tras pausa > 3 s vuelve al inicio de la frase",
+    "priority": 23,
+    "depends_on": [
+      "MH-23"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-30.test.ts"
+    }
+  },
+  {
+    "id": "MH-32",
+    "must_have_ref": "MH-32",
+    "description": "Progreso: % leído y tiempo restante como suma de duraciones",
+    "priority": 24,
+    "depends_on": [
+      "MH-22",
+      "MH-23"
+    ],
+    "verify": {
+      "kind": "test",
+      "file": "tests/unit/mh-32.test.ts"
+    }
+  },
+  {
+    "id": "MH-28",
+    "must_have_ref": "MH-28",
+    "description": "Teclado: espacio play/pausa, ↑/↓ ±25 WPM en [100,1000], sin doble disparo",
+    "priority": 25,
+    "depends_on": [
+      "MH-02",
+      "MH-23",
+      "MH-18",
+      "MH-12"
+    ],
+    "verify": {
+      "kind": "e2e",
+      "file": "tests/e2e/mh-28.spec.ts"
+    }
+  },
+  {
+    "id": "MH-19",
+    "must_have_ref": "MH-19",
+    "description": "Pivote fijo en pantalla: misma x ±1 px tras fonts.ready",
+    "priority": 26,
+    "depends_on": [
+      "MH-28"
+    ],
+    "verify": {
+      "kind": "e2e",
+      "file": "tests/e2e/mh-19.spec.ts"
+    }
+  },
+  {
+    "id": "MH-20",
+    "must_have_ref": "MH-20",
+    "description": "Nada se desborda a 375 px",
+    "priority": 27,
+    "depends_on": [
+      "MH-28"
+    ],
+    "verify": {
+      "kind": "e2e",
+      "file": "tests/e2e/mh-20.spec.ts"
+    }
+  },
+  {
+    "id": "MH-31",
+    "must_have_ref": "MH-31",
+    "description": "Contexto en pausa con la palabra actual resaltada",
+    "priority": 28,
+    "depends_on": [
+      "MH-28"
+    ],
+    "verify": {
+      "kind": "e2e",
+      "file": "tests/e2e/mh-31.spec.ts"
+    }
+  },
+  {
+    "id": "MH-33",
+    "must_have_ref": "MH-33",
+    "description": "Accesibilidad mínima: etiquetas, teclado, aria-hidden, botón táctil",
+    "priority": 29,
+    "depends_on": [
+      "MH-28"
+    ],
+    "verify": {
+      "kind": "e2e",
+      "file": "tests/e2e/mh-33.spec.ts"
+    }
+  },
+  {
+    "id": "MH-15",
+    "must_have_ref": "MH-15",
+    "description": "El último libro se abre solo al recargar",
+    "priority": 30,
+    "depends_on": [
+      "MH-13",
+      "MH-17",
+      "MH-28"
+    ],
+    "verify": {
+      "kind": "e2e",
+      "file": "tests/e2e/mh-15.spec.ts"
+    }
+  },
+  {
+    "id": "MH-14",
+    "must_have_ref": "MH-14",
+    "description": "Caché: al reabrir no se crea worker ni se carga pdf.js",
+    "priority": 31,
+    "depends_on": [
+      "MH-15"
+    ],
+    "verify": {
+      "kind": "e2e",
+      "file": "tests/e2e/mh-14.spec.ts"
+    }
+  }
+]

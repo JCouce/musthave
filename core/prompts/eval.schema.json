@@ -1,0 +1,1 @@
+{"type":"object","properties":{"feature":{"type":"string"},"verdict":{"type":"string","enum":["pass","fail"]},"criteria":{"type":"array","items":{"type":"object","properties":{"criterion":{"type":"string"},"score":{"type":"number"},"evidence":{"type":"string"}},"required":["criterion","score","evidence"]}}},"required":["feature","verdict","criteria"]}
