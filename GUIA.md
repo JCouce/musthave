@@ -53,7 +53,7 @@ Un bucle en bash (`loop.sh`) coordina todo esto: elige la siguiente feature por 
 ## Fase 0 — Instalar (una vez por máquina)
 
 ```sh
-git clone <url de este repo> ~/Documents/musthave      # o donde quieras
+git clone https://github.com/JCouce/musthave.git ~/Documents/musthave   # o donde quieras
 brew install jq coreutils bats-core                    # coreutils trae gtimeout
 $MH/skill/install.sh                                   # skill /musthave + ~/.musthave/config.env
 $MH/core/bin/doctor.sh --smoke                         # comprueba todo; --smoke hace 2 llamadas mínimas a claude
